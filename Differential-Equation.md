@@ -65,3 +65,24 @@ $$
 y = C_1 y_1 + C_2 y_2 + 
 \cdots + C_n y_n
 $$
+
+# 常系数非齐次线性微分方程
+1. $y'' + py' + qy = P_m(x)e^{\lambda x}$
+
+$\lambda$ 为特征方程的 $k$ 重根，则设特解为
+$$
+y^* = x^k Q_m(x)e^{\lambda x}
+$$
+
+2. $y'' + py' + qy = e^{\lambda x}\left[P_l(x)\cos\omega x + \widetilde{P}_n(x)\sin\omega x\right]$
+
+$\lambda \pm i\omega$ 为特征方程的 $k$ 重根，则设特解为
+$$
+y^* = x^k e^{\lambda x}\left[R_m(x)\cos\omega x + \widetilde{R}_m(x)\sin\omega x\right]
+$$
+
+# 欧拉方程
+$$
+x^n y^{(n)} + p_1 x^{n - 1}y^{(n - 1)} + \cdots + p_{n - 1}xy' + p_n y = f(x)
+$$
+令 $x = e^t$，即 $t = \ln x$
