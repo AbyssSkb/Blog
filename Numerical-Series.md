@@ -48,6 +48,29 @@ $$\sum\limits_{n=1}^\infty \frac{1}{n^p}$$
 
 当 $\sum\limits_{n=1}^\infty a_n$ 发散时，$\sum\limits_{n=1}^\infty b_n$ 发散。
 
+3. 推论
+
+设 $\sum\limits_{n=1}^\infty a_n$，$\sum\limits_{n=1}^\infty b_n$ 为两个正项级数，若从某项以后有 $\frac{a_{n+1}}{a_n} \le \frac{b_{n+1}}{b_n}$，则
+
+当 $\sum\limits_{n=1}^\infty b_n$ 收敛时，$\sum\limits_{n=1}^\infty a_n$ 收敛；
+
+当 $\sum\limits_{n=1}^\infty a_n$ 发散时，$\sum\limits_{n=1}^\infty b_n$ 发散。
+
+4. 比阶法
+
+设 $\sum\limits_{n=1}^\infty a_n$，$\sum\limits_{n=1}^\infty b_n$ 为两个正项级数，且 $\lim\limits_{n\to\infty} \frac{a_n}{b_n} = k > 0$，则 $\sum\limits_{n=1}^\infty a_n$，$\sum\limits_{n=1}^\infty b_n$ 敛散性一致。
+
+5. 达朗贝尔判别法
+
+设 $\sum\limits_{n=1}^\infty a_n$ 为一个正项级数，且 $\lim\limits_{n\to\infty} = r \ge 0$，则当 $0 \le r < 1$ 时收敛，当 $r > 1$ 时发散。
+
+6. 柯西判别法
+
+设 $\sum\limits_{n=1}^\infty a_n$ 是一个正项级数，且 $\lim\limits_{n\to\infty} \sqrt[n]{a_n} = r \ge 0$，则当 $0 \le r < 1$ 时收敛，当 $r > 1$ 时发散。
+
+7. 积分判别法
+
+设 $\sum\limits_{n=1}^\infty b_n$ 是一个正项级数，函数 $f(x)$ 在 $[a, +\infty)$（$a > 0$）上非负、连续、单调下降，且 $f(n) = b_n$，则 $\sum\limits_{n=1}^\infty b_n$ 与反常积分 $\int_a^{+\infty} f(x)dx$ 敛散性一致。 
 # 交错级数
 ## 定义
 设 $a_n > 0$，称 $\sum\limits_{n=1}^\infty (-1)^n a_n$ 或 $\sum\limits_{n=1}^\infty (-1)^{n+1} a_n$ 为**交错级数**。
