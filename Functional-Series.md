@@ -32,12 +32,27 @@ tags: [Math, Series]
 $\sum\limits_{n=0}^\infty a_n x^n$ 的**收敛域** $=$ 收敛区间 $(-R, R) \cup \pm R$ 中收敛的点
 
 ## 性质
+- **阿贝尔引理**
+
 设 $\sum\limits_{n=0}^\infty a_n x^n$ 在 $x_0 \ne 0$ 点收敛，则 $\sum\limits_{n=0}^\infty a_n x^n$ 在 $\vert x\vert < \vert x_0 \vert$ 上绝对收敛。
 
 **推论**：如果 $\sum\limits_{n=0}^\infty a_n x^n$ 在 $x_0$ 点发散，则 $\sum\limits_{n=0}^\infty a_n x^n$ 在 $\vert x\vert > \vert x_0\vert$ 上发散。
 
-设 $\sum\limits_{n=0}^\infty a_n x^n$ 满足 $\lim\limits_{n\to\infty} \left\vert \frac{a_{n+1}}{a_n}\right\vert$ （或 $\lim\limits_{n\to\infty} \sqrt[n]{\vert a_n\vert}$）$= \rho \ge 0$（或 $+\infty$），则 $R = \frac{1}{\rho}$ 是 $\sum\limits_{n=0}^\infty a_n x^n$ 的收敛半径。
+**思考**：这同时也证明了幂级数存在收敛半径，小于这个收敛半径时幂级数收敛，大于这个收敛半径时幂级数发散。
+- 如何求收敛域？
 
+设一幂级数为 $\sum\limits_{n=0}^\infty u_n$，令 $\lim\limits_{n\to\infty} \left\vert \frac{u_{n+1}}{u_n}\right\vert < 1$ （或令 $\lim\limits_{n\to\infty} \sqrt[n]{\vert u_n\vert} < 1$），求出来 $x$ 的范围即为 $\sum\limits_{n=0}^\infty u_n$ 的收敛区间，再验证一下区间的左右端点是否收敛即可得到收敛域。
+
+**思考**：为什么能这样做？
+
+正项级数的性质中比值审敛法和根植审敛法都以 1 为边界，而幂级数又存在收敛半径，刚刚好！
+- 设 $\sum\limits_{n=0}^\infty a_n x^n$ 的收敛半径为 $R_1$，$\sum\limits_{n=0}^\infty b_n x^n$ 的收敛半径为 $R_2$，令 $R = \min\{R_1, R_2\}$，则有
+$$
+\sum\limits_{n=0}^\infty a_n x^n + \sum\limits_{n=0}^\infty b_n x^n = \sum\limits_{n=0}^\infty (a_n \pm b_n) x^n, \quad \vert x \vert < R
+$$
+**思考**：这个性质乍一看似乎没啥用，但是反过来就有大用了！$\sum\limits_{n=0}^\infty (a_n \pm b_n)x^n$ 的收敛域有时候用上一条性质并不好求，但是 $\sum\limits_{n=0}^\infty a_nx^n$ 和 $\sum\limits_{n=0}^\infty b_nx^n$ 的收敛半径 $R_1$ 和 $R_2$ 用上一条性质很好求，那么 $\sum\limits_{n=0}^\infty (a_n \pm b_n)x^n$ 的收敛半径 $R = \min\{R_1, R_2\}$
+## 小结
+幂级数真的非常美，从阿贝尔引理的证明，到求收敛域的过程，都运用了绝对收敛和正项级数的性质，这也突出学好前面知识的重要性。
 # 三角级数
 ## 定义
 称 $\frac{1}{2}a_0 + \sum\limits_{n=1}^\infty a_n\cos nx + b_n \sin nx$ 为**三角级数**。
