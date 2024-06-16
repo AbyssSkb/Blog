@@ -40,25 +40,6 @@ $$
 E = \frac{\lambda}{2\pi\varepsilon_0 r}
 $$
 
-### 电偶极子的电场强度
-我们定义电距
-$$
-\overrightarrow{p} = q \overrightarrow{r_0}
-$$
-$\overrightarrow{r_0}$ 为由 $-q$ 指向 $q$ 的距离向量
-
-#### 轴线延长线上一点的电场强度
-若 $x \gg r_0$，则
-$$
-\overrightarrow{E} = \frac{1}{4\pi\varepsilon_0}\frac{2\overrightarrow{p}}{x^3}
-$$
-
-#### 轴线中垂线上一点的电场强度
-若 $y \gg r_0$，则
-$$
-\overrightarrow{E} = -\frac{1}{4\pi\varepsilon_0}\frac{\overrightarrow{p}}{y^3}
-$$
-
 ### 电场强度通量
 描述通过电场中某个面的电场线数目的物理量
 $$
@@ -97,4 +78,42 @@ $$
 \end{split}
 $$
 
-由 $V_A = \int_A^B \overrightarrow{E} \cdot d\overrightarrow{l}$ 可得
+## 电场强度与电势梯度
+由 $V_A = \int_A^B \overrightarrow{E} \cdot\mathop{}\!\mathrm{d}\overrightarrow{l}$ 可得
+$$
+\vec{E} = -\nabla V
+$$
+
+## 静电场中的电偶极子
+我们定义电距
+$$
+\overrightarrow{p} = q \overrightarrow{r_0}
+$$
+$\overrightarrow{r_0}$ 为由 $-q$ 指向 $q$ 的距离向量
+
+#### 轴线延长线上一点的电场强度
+若 $x \gg r_0$，则
+$$
+\overrightarrow{E} = \frac{1}{4\pi\varepsilon_0}\frac{2\overrightarrow{p}}{x^3}
+$$
+
+#### 轴线中垂线上一点的电场强度
+若 $y \gg r_0$，则
+$$
+\overrightarrow{E} = -\frac{1}{4\pi\varepsilon_0}\frac{\overrightarrow{p}}{y^3}
+$$
+
+#### 在匀强磁场中受到的力
+$$
+\vec{F} = \vec{0}
+$$
+
+#### 受到的力矩
+$$
+\vec{M} = \vec{p} \times \vec{E}
+$$
+
+#### 电势能
+$$
+E_p = - \vec{p} \cdot \vec{E}
+$$
