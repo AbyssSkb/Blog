@@ -14,7 +14,7 @@ $$
 
 # 第二型曲线积分
 ## 定义
-设 $C$ 是空间一有向曲线，其方向为其切线给定方向，引入直角坐标，$\overrightarrow{A}(P) = \{P(x,y,z),Q(x,y,z),R(x,y,z)\}$ 是 $C$ 上连续函数，则
+设 $C$ 是空间一有向曲线，其方向为其切线给定方向，引入直角坐标，$\overrightarrow{A}(P) = \left\{P(x,y,z),\ Q(x,y,z),\ R(x,y,z)\right\}$ 是 $C$ 上连续函数，则
 $$
 \mathop{}\!\mathrm{d}\Omega \cos\alpha_P =\mathop{}\!\mathrm{d}x,\quad\mathop{}\!\mathrm{d}\Omega\cos\beta_P =\mathop{}\!\mathrm{d}y,\quad\mathop{}\!\mathrm{d}\Omega\cos \gamma_P =\mathop{}\!\mathrm{d}z
 $$
