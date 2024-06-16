@@ -181,6 +181,7 @@ $$
 \vec{E'} = -\frac{\vec{P}}{\varepsilon_0}
 $$
 ### 有介质时的高斯定理
+由高斯定理
 $$
 \oiint\limits_S \vec{E} \cdot\mathop{}\!\mathrm{d}\vec{S} = \frac{1}{\varepsilon_0}(Q_0 + Q')
 $$
@@ -192,11 +193,11 @@ $$
 $$
 \oiint\limits_S \left(\varepsilon_0\vec{E} + \vec{P}\right) \cdot\mathop{}\!\mathrm{d} \vec{S} = Q_0
 $$
-我们定义电位移矢量
+我们定义**电位移矢量**
 $$
 \vec{D} = \varepsilon_0\vec{E} + \vec{P}
 $$
-和电位移通量
+和**电位移通量**
 $$
 \oiint\limits_S \vec{D} \cdot\mathop{}\!\mathrm{d}\vec{S}
 $$
