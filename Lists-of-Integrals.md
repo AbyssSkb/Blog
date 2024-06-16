@@ -1,8 +1,7 @@
 ---
-title: 积分表
+title: 常用不定积分表
 date: 2023-12-13 23:59:07
 tags: [Math, Calculus]
-description: 常用积分表
 ---
 $\int kdx = kx + C$
 
