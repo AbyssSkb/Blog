@@ -62,7 +62,7 @@ $$\sum\limits_{n=1}^\infty \frac{1}{n^p}$$
 
 5. 达朗贝尔判别法
 
-设 $\sum\limits_{n=1}^\infty a_n$ 为一个正项级数，且 $\lim\limits_{n\to\infty} = r \ge 0$，则当 $0 \le r < 1$ 时收敛，当 $r > 1$ 时发散。
+设 $\sum\limits_{n=1}^\infty a_n$ 为一个正项级数，且 $\lim\limits_{n\to\infty}\frac{a_{n+1}}{a_n} = r \ge 0$，则当 $0 \le r < 1$ 时收敛，当 $r > 1$ 时发散。
 
 6. 柯西判别法
 
