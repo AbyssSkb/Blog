@@ -11,7 +11,7 @@ tags: [AI, Transformer]
 
 2017 年，Google 团队 Vaswani 等人在论文《Attention is All You Need》中提出了 Transformer，该模型创新性地引入了自注意力机制（Self-Attention）以及多头注意力机制（Multi-Head Attention），能够并行处理一段序列，理解其中不同位置单词之间的联系。2018 年，OpenAI提出了 GPT（Generative Pre-trained Transformer）模型，其先在大量无标签的文本数据集上进行自监督预训练，然后在具体要学习的任务上进行微调，在许多数据集上的指标均取得了巨大突破。同年 Google 团队 Devlin 等人提出了 BERT（Bidirectional Encoder Representations from Transformers），该模型使用了双向编解码器，进一步提高了理解上下文的能力，以掩码语言模型 (MLM) 为任务在大量文本数据集上进行自监督预训练后，在对应任务的数据集上微调即可表现出优异的性能。
 
-2020 年，Alexey Dosovitskiy 等人提出了 ViT（Vision Transformer），标志着 Transformer 开始应用于计算机视觉领域。ViT 将一幅图像分割成许多块，经过线性变换投影到高维空间后排成一条序列作为 Transformer 的输入，在 ImageNet 数据集上对图像分类取得了与卷积神经网络（CNN）相媲美的结果，证明了 Transformer 在视觉任务上的潜力。在目标检测任务上，Nicolas Carion 等人随后提出了 DETR（Detection Transformer），直接输出目标的类别和准确位置不再需要用传统的锚框（Anchor Box）和非极大值抑制（Non-Maximum Suppression），真正意义上实现了端对端（End-to-End）。由于 Transformer 相比于传统卷积神经网络来说结构较为复杂，计算复杂度高，不太适用于对延迟要求较高的实时目标检测任务（Real-Time Object Detection）中，对此百度于 2024 年提出了 RT-DETR（Real-Time Detection Transformer），采用了一种高效地混合编码器，减少了计算复杂度。
+2020 年，Alexey Dosovitskiy 等人提出了 ViT（Vision Transformer），标志着 Transformer 开始应用于计算机视觉领域。ViT 将一幅图像分割成许多块，经过线性变换投影到高维空间后排成一条序列作为 Transformer 的输入，在 ImageNet 数据集上对图像分类取得了与卷积神经网络（CNN）相媲美的结果，证明了 Transformer 在视觉任务上的潜力。在目标检测任务上，Nicolas Carion 等人随后提出了 DETR（Detection Transformer），直接输出目标的类别和准确位置不再需要用传统的锚框（Anchor Box）和非极大值抑制（Non-Maximum Suppression），真正意义上实现了端对端（End-to-End）。由于 Transformer 相比于传统卷积神经网络来说结构较为复杂，计算复杂度高，不太适用于对延迟要求较高的实时目标检测任务（Real-Time Object Detection）中，对此百度于 2024 年提出了 RT-DETR（Real-Time Detection Transformer），采用了一种高效的混合编码器，减少了计算复杂度。
 
 2020年后，多模态 Transformer 模型开始兴起。2021年，OpenAI 提出了 CLIP（Contrastive Language-Image Pre-training），通过对图像和文本数据进行联合训练，实现了跨模态的视觉和语言理解能力。同时，OpenAI 提出了 DALL-E，支持从文本描述生成图像。
 
