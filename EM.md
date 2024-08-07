@@ -16,7 +16,7 @@ $$
 
 >   求证：$\log p(x|\theta^t)\le\log p(x|\theta^{t+1})$
 >
->   证明：$\log p(x|\theta)=\log p(z,x|\theta)-\log p(z|x,\theta)$，对左右两边求积分：
+>   证明：$\log p(x|\theta)=\log p(z,x|\theta)-\log p(z|x,\theta)$。左右两边同时求在概率分布 $p(z|x,\theta^t)$ 下的期望：
 >   $$
 >   Left:\int_zp(z|x,\theta^t)\log p(x|\theta)dz=\log p(x|\theta)
 >   $$
