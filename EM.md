@@ -4,7 +4,7 @@ date: 2024-8-7 08:00:00
 tags: [ML, Math]
 ---
 # 期望最大
-
+## 狭义 EM
 期望最大算法的目的是解决具有隐变量的混合模型的参数估计（极大似然估计）。MLE 对 $p(x|\theta)$ 参数的估计记为：$\theta_{MLE}=\mathop{argmax}\limits_\theta\log p(x|\theta)$。EM 算法对这个问题的解决方法是采用迭代的方法：
 $$
 \theta^{t+1}=\mathop{argmax}\limits_{\theta}\int_z\log [p(x,z|\theta)]p(z|x,\theta^t)dz=\mathbb{E}_{z|x,\theta^t}[\log p(x,z|\theta)]
