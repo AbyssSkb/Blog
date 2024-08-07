@@ -31,9 +31,9 @@ $$
 >   $$
 >   由于 $Q(\theta,\theta^t)=\int_zp(z|x,\theta^t)\log p(x,z|\theta)dz$，而 $\theta^{t+1}=\mathop{argmax}\limits_{\theta}\int_z\log [p(x,z|\theta)]p(z|x,\theta^t)dz$，所以 $Q(\theta^{t+1},\theta^t)\ge Q(\theta^t,\theta^t)$。要证 $\log p(x|\theta^t)\le\log p(x|\theta^{t+1})$，需证：$H(\theta^t,\theta^t)\ge H(\theta^{t+1},\theta^t)$：
 >   $$
->   \begin{align}H(\theta^{t+1},\theta^t)-H(\theta^{t},\theta^t)&=\int_zp(z|x,\theta^{t})\log p(z|x,\theta^{t+1})dz-\int_zp(z|x,\theta^t)\log p(z|x,\theta^{t})dz\nonumber\\
+>   \begin{split}H(\theta^{t+1},\theta^t)-H(\theta^{t},\theta^t)&=\int_zp(z|x,\theta^{t})\log p(z|x,\theta^{t+1})dz-\int_zp(z|x,\theta^t)\log p(z|x,\theta^{t})dz\nonumber\\
 >   &=\int_zp(z|x,\theta^t)\log\frac{p(z|x,\theta^{t+1})}{p(z|x,\theta^t)}=-KL(p(z|x,\theta^t),p(z|x,\theta^{t+1}))\le0
->   \end{align}
+>   \end{split}
 >   $$
 >   综合上面的结果：
 >   $$
@@ -46,19 +46,19 @@ $$
 $$
 分别对两边求期望 $\mathbb{E}_{q(z)}$：
 $$
-\begin{align}
+\begin{split}
 &Left:\int_zq(z)\log p(x|\theta)dz=\log p(x|\theta)\\
 &Right:\int_zq(z)\log \frac{p(z,x|\theta)}{q(z)}dz-\int_zq(z)\log \frac{p(z|x,\theta)}{q(z)}dz=ELBO+KL(q(z),p(z|x,\theta))
-\end{align}
+\end{split}
 $$
-上式中，Evidence Lower Bound(ELBO)，是一个下界，所以 $\log p(x|\theta)\ge ELBO$，等于号取在 KL 散度为0是，即：$q(z)=p(z|x,\theta)$，EM 算法的目的是将 ELBO 最大化，根据上面的证明过程，在每一步 EM 后，求得了最大的ELBO，并根据这个使 ELBO 最大的参数代入下一步中：
+上式中，Evidence Lower Bound(ELBO)，是一个下界，所以 $\log p(x|\theta)\ge ELBO$，等于号取在 KL 散度为0时，即：$q(z)=p(z|x,\theta)$，EM 算法的目的是将 ELBO 最大化，根据上面的证明过程，在每一步 EM 后，求得了最大的ELBO，并根据这个使 ELBO 最大的参数代入下一步中：
 $$
-\hat{\theta}=\mathop{argmax}_{\theta}ELBO=\mathop{argmax}_\theta\int_zq(z)\log\frac{p(x,z|\theta)}{q(z)}dz
+\hat{\theta}=\mathop{argmax}\limits_{\theta}ELBO=\mathop{argmax}\limits_\theta\int_zq(z)\log\frac{p(x,z|\theta)}{q(z)}dz
 $$
 由于 $ q(z)=p(z|x,\theta^t)$ 的时候，这一步的最大值才能取等号，所以：
 $$
-\hat{\theta}=\mathop{argmax}_{\theta}ELBO=\mathop{argmax}_\theta\int_zq(z)\log\frac{p(x,z|\theta)}{q(z)}dz=\mathop{argmax}_\theta\int_zp(z|x,\theta^t)\log\frac{p(x,z|\theta)}{p(z|x,\theta^t)}d z\\
-=\mathop{argmax}_\theta\int_z p(z|x,\theta^t)\log p(x,z|\theta)
+\hat{\theta}=\mathop{argmax}\limits_{\theta}ELBO=\mathop{argmax}\limits_\theta\int_zq(z)\log\frac{p(x,z|\theta)}{q(z)}dz=\mathop{argmax}\limits_\theta\int_zp(z|x,\theta^t)\log\frac{p(x,z|\theta)}{p(z|x,\theta^t)}d z\\
+=\mathop{argmax}\limits_\theta\int_z p(z|x,\theta^t)\log p(x,z|\theta)
 $$
 这个式子就是上面 EM 迭代过程中的式子。
 
@@ -76,20 +76,20 @@ $$
 
 ## 广义 EM
 
-EM 模型解决了概率生成模型的参数估计的问题，通过引入隐变量 $z$，来学习 $\theta$，具体的模型对 $z$ 有不同的假设。对学习任务 $p(x|\theta)$，就是学习任务 $\frac{p(x,z|\theta)}{p(z|x,\theta)}$。在这个式子中，我们假定了在 E 步骤中，$q(z)=p(z|x,\theta)$，但是这个$p(z|x,\theta)$ 如果无法求解，那么必须使用采样（MCMC）或者变分推断等方法来近似推断这个后验。我们观察 KL 散度的表达式，为了最大化 ELBO，在固定的 $\theta$ 时，我们需要最小化 KL 散度，于是：
+EM 模型解决了概率生成模型的参数估计的问题，通过引入隐变量 $z$，来学习 $\theta$，具体的模型对 $z$ 有不同的假设。对学习任务 $p(x|\theta)$，就是学习任务 $\frac{p(x,z|\theta)}{p(z|x,\theta)}$。在这个式子中，我们假定了在 E 步骤中，$q(z)=p(z|x,\theta)$，但是这个 $p(z|x,\theta)$ 如果无法求解，那么必须使用采样（MCMC）或者变分推断等方法来近似推断这个后验。我们观察 KL 散度的表达式，为了最大化 ELBO，在固定的 $\theta$ 时，我们需要最小化 KL 散度，于是：
 $$
-\hat{q}(z)=\mathop{argmin}_qKL(p,q)=\mathop{argmax}_qELBO
+\hat{q}(z)=\mathop{argmin}\limits_qKL(p,q)=\mathop{argmax}\limits_qELBO
 $$
 这就是广义 EM 的基本思路：
 
 1.  E step：
     $$
-    \hat{q}^{t+1}(z)=\mathop{argmax}_q\int_zq^t(z)\log\frac{p(x,z|\theta)}{q^t(z)}dz,fixed\ \theta
+    \hat{q}^{t+1}(z)=\mathop{argmax}\limits_q\int_zq^t(z)\log\frac{p(x,z|\theta)}{q^t(z)}dz,fixed\ \theta
     $$
 
 2.  M step：
     $$
-    \hat{\theta}=\mathop{argmax}_\theta \int_zq^{t+1}(z)\log\frac{p(x,z|\theta)}{q^{t+1}(z)}dz,fixed\ \hat{q}
+    \hat{\theta}=\mathop{argmax}\limits_\theta \int_zq^{t+1}(z)\log\frac{p(x,z|\theta)}{q^{t+1}(z)}dz,fixed\ \hat{q}
     $$
     
 
