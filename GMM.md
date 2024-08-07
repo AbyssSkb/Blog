@@ -4,7 +4,7 @@ date: 2024-8-7 14:00:00
 tags: [ML, Math]
 ---
 # 高斯混合模型
-
+## 概述
 为了解决高斯模型的单峰性的问题，我们引入多个高斯模型的加权平均来拟合多峰数据：
 $$
 p(x)=\sum\limits_{k=1}^K\alpha_k\mathcal{N}(\mu_k,\Sigma_k)
@@ -43,8 +43,8 @@ $$
 
 EM 算法的基本表达式为：$\theta^{t+1}=\mathop{argmax}\limits_{\theta}\mathbb{E}_{z|x,\theta_t}[p(x,z|\theta)]$。套用 GMM 的表达式，对数据集来说：
 $$
-\begin{split}Q(\theta,\theta^t)&=\sum\limits_z[\log\prod\limits_{i=1}^Np(x_i,z_i|\theta)]\prod \limits_{i=1}^Np(z_i|x_i,\theta^t)\nonumber\\
-&=\sum\limits_z[\sum\limits_{i=1}^N\log p(x_i,z_i|\theta)]\prod \limits_{i=1}^Np(z_i|x_i,\theta^t)
+\begin{split}Q(\theta,\theta^t)&=\sum\limits_z\left[\log\prod\limits_{i=1}^Np(x_i,z_i|\theta)\right]\prod \limits_{i=1}^Np(z_i|x_i,\theta^t)\nonumber\\
+&=\sum\limits_z\left[\sum\limits_{i=1}^N\log p(x_i,z_i|\theta)\right]\prod \limits_{i=1}^Np(z_i|x_i,\theta^t)
 \end{split}
 $$
 对于中间的那个求和号，展开，第一项为：
