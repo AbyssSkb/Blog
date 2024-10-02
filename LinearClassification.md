@@ -18,7 +18,10 @@ tags: [ML]
 
 我们选取激活函数为：
 $$
-sign(a)=\left\{\begin{matrix}+1,a\ge0\\-1,a\lt0\end{matrix}\right.
+sign(a)=\begin{cases}
+    1 & a\ge 0 \\
+    -1 & a < 0
+\end{cases}
 $$
 这样就可以将线性回归的结果映射到两分类的结果上了。
 
